@@ -22,10 +22,10 @@ function loadEmployee() {
             var employee = JSON.parse(x.responseText);
 
             document.getElementById("result").innerHTML =
-                "Name: " + okay.name + "<br>" +
-                "ID: " + okay.id + "<br>" +
-                "Department: " + okay.department + "<br>" +
-                "Salary: " + okay.salary;
+                "Name: " + okay.Name + "<br>" +
+                "ID: " + okay.ID + "<br>" +
+                "Department: " + okay.Department + "<br>" +
+                "Salary: " + okay.Salary;
         } else {
             document.getElementById("result").innerHTML =
                 "Unable to load employee information.";
