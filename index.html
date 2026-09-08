@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AJAX Example</title>
+    <title>Student Information</title>
 </head>
 <body>
 
-<h2>AJAX Example</h2>
+<h2>Student Information</h2>
 
-<button onclick="loadData()">Load Data</button>
+<button onclick="loadStudent()">Load Student</button>
 
 <p id="result"></p>
 
 <script>
-function loadData() {
-    var xhttp = new XMLHttpRequest();
+function loadStudent() {
+    var x = new XMLHttpRequest();
 
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+    x.open("GET", "student.txt", true);
+
+    x.onload = function() {
+        if (x.status == 200) {
             document.getElementById("result").innerHTML =
-                this.responseText;
+                x.responseText;
+        } else {
+            document.getElementById("result").innerHTML =
+                "Unable to load student information.";
         }
     };
 
-    xhttp.open("GET", "ok.txt", true);
-    xhttp.send();
+    x.send();
 }
 </script>
 
