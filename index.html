@@ -19,7 +19,7 @@ function loadEmployee() {
 
     x.onload = function() {
         if (x.status == 200) {
-            var employee = JSON.parse(x.responseText);
+            var okay= JSON.parse(x.responseText);
 
             document.getElementById("result").innerHTML =
                 "Name: " + okay.Name + "<br>" +
