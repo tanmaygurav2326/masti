@@ -19,8 +19,8 @@ function loadStudent() {
 
     x.onload = function() {
         if (x.status == 200) {
-            document.getElementById("result").innerHTML = "<pre>"+
-                x.responseText + "<pre>;
+            document.getElementById("result").innerHTML =
+                x.responseText;
         } else {
             document.getElementById("result").innerHTML =
                 "Unable to load student information.";
