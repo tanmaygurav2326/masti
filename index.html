@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Information</title>
+    <title>Employee Information</title>
 </head>
 <body>
 
-<h2>Student Information</h2>
+<h2>Employee Information</h2>
 
-<button onclick="loadStudent()">Load Student</button>
+<button onclick="loadEmployee()">Load Employee</button>
 
 <p id="result"></p>
 
 <script>
-function loadStudent() {
+function loadEmployee() {
     var x = new XMLHttpRequest();
 
-    x.open("GET", "okay.txt", true);
+    x.open("GET", "employee.json", true);
 
     x.onload = function() {
         if (x.status == 200) {
+            var employee = JSON.parse(x.responseText);
+
             document.getElementById("result").innerHTML =
-                x.responseText;
+                "Name: " + employee.name + "<br>" +
+                "ID: " + employee.id + "<br>" +
+                "Department: " + employee.department + "<br>" +
+                "Salary: " + employee.salary;
         } else {
             document.getElementById("result").innerHTML =
-                "Unable to load student information.";
+                "Unable to load employee information.";
         }
     };
 
